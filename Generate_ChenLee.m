@@ -1,4 +1,4 @@
-function [Y,W,Z,theta_true] = Generate_ChenLee(n,tau)
+function [Y,W,Z,theta_true] = Generate_ChenLee(n,tau,r_seed)
 % Generates path of Chen & Lee DGP (see eq. 4.1)
 %INPUT:
 %n - sample size
@@ -9,6 +9,7 @@ function [Y,W,Z,theta_true] = Generate_ChenLee(n,tau)
 %Z - nx4 matrix of instruments
 %theta_true - 4x1 vector of true parameter values
 
+rng(r_seed);
 V = eye(4);
 V(1,:) = [1,0.4,0.6,-0.2];
 V(:,1) = [1,0.4,0.6,-0.2];
